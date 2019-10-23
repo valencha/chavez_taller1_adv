@@ -2,304 +2,19 @@ import React from 'react';
 import { makeStyles} from '@material-ui/core';
 import EditPanel from '../../components/EditPanel/EditPanel';
 import DataContext from '../../context/DataContext/DataContext';
-import { VictoryBar, VictoryChart } from "victory";
+import { VictoryBar, VictoryChart, VictoryTheme, VictoryLabel } from "victory";
 
 function Discover(props){
-    var dataInitials = [
-        
-        { quarter: 'Rose', dataY: 100 },
-        { quarter: 'Sunflower', dataY: 40 },
-        { quarter: 'Tulip', dataY: 60 },
-        { quarter: 'Lily', dataY: 75 },
-
-    ];
-    var dataRoseCountry = [
-        
-        { quarter: 'Colombia', dataY: 80 },
-        { quarter: 'Belgium', dataY: 30 },
-        { quarter: 'EUU', dataY: 70 },
-        { quarter: 'Canada', dataY: 50 },
-    ];
-    
-    var dataSunflowerCountry = [
-        
-        { quarter: 'Ukraine', dataY: 100 },
-        { quarter: 'Russia', dataY: 80 },
-        { quarter: 'Argentina', dataY: 70 },
-        { quarter: 'China', dataY: 90 },
-    ];
-
-    var dataTulipCountry = [
-        
-        { quarter: 'Canada', dataY: 70 },
-        { quarter: 'England', dataY: 55 },
-        { quarter: 'Netherlands', dataY: 100 },
-        { quarter: 'Belgium', dataY: 60 },
-    ];
-
-    var dataLilyCountry = [
-        
-        { quarter: 'EEUU', dataY: 60 },
-        { quarter: 'Mexico', dataY: 80 },
-        { quarter: 'Ecuador', dataY: 65 },
-        { quarter: 'Belgium', dataY: 40 },
-    ];
-    
-    var dataRoseColor = [
-        
-        { quarter: 'Red', dataY: 100 },
-        { quarter: 'Yellow', dataY: 65 },
-        { quarter: 'Blue', dataY: 20 },
-        { quarter: 'White', dataY: 60 },
-    ];
-    
-    var dataSunflowerColor= [
-        
-        { quarter: 'Red', dataY: 15 },
-        { quarter: 'Yellow', dataY: 100 },
-        { quarter: 'Orange', dataY: 40 },
-        { quarter: 'White', dataY: 20 },
-    ];
-
-    var dataTulipColor = [
-        
-        { quarter: 'Purple', dataY: 70 },
-        { quarter: 'Yellow', dataY: 55 },
-        { quarter: 'Pink', dataY: 90 },
-        { quarter: 'Blue', dataY: 30 },
-    ];
-
-    var dataLilyColor = [
-        
-        { quarter: 'Red', dataY: 60 },
-        { quarter: 'White', dataY: 15 },
-        { quarter: 'Pink', dataY: 100 },
-        { quarter: 'Yellow', dataY: 20 },
-    ];
-    var dataRoseSeason = [
-        
-        { quarter: 'Winter', dataY: 10 },
-        { quarter: 'Spring', dataY: 80 },
-        { quarter: 'Summer', dataY: 40 },
-        { quarter: 'Fall', dataY: 0 },
-    ];
-    var dataSunflowerSeason = [
-        
-        { quarter: 'Winter', dataY: 10 },
-        { quarter: 'Spring', dataY: 80 },
-        { quarter: 'Summer', dataY: 40 },
-        { quarter: 'Fall', dataY: 15 },
-    ];
-    var dataTulipSeason = [
-        
-        { quarter: 'Winter', dataY: 80 },
-        { quarter: 'Spring', dataY: 30 },
-        { quarter: 'Summer', dataY: 70 },
-        { quarter: 'Fall', dataY: 57 },
-    ];
- 
-    var dataLilySeason = [
-        
-        { quarter: 'Winter', dataY: 20 },
-        { quarter: 'Spring', dataY: 100 },
-        { quarter: 'Summer', dataY: 70 },
-        { quarter: 'Fall', dataY: 57 },
-    ];
- 
-    var dataRoseHoliday = [
-        
-        { quarter: 'Christmas Day', dataY: 50 },
-        { quarter: 'Thanksgiving Day', dataY: 65 },
-        { quarter: 'Mother`s Day', dataY: 80 },
-        { quarter: 'Valentine`s Day', dataY: 100 },
-    ];
-    var dataSunflowerHoliday = [
-        
-        { quarter: 'Christmas Day', dataY: 10 },
-        { quarter: 'Thanksgiving Day', dataY: 45 },
-        { quarter: 'Mother`s Day', dataY: 100 },
-        { quarter: 'Valentine`s Day', dataY: 100 },
-    ];
-    var dataTulipSeason = [
-        
-        { quarter: 'Christmas Day', dataY: 100 },
-        { quarter: 'Thanksgiving Day', dataY: 35 },
-        { quarter: 'Mother`s Day', dataY: 40 },
-        { quarter: 'Valentine`s Day', dataY: 20 },
-    ];
- 
-    var dataLilySeason = [
-        
-        { quarter: 'Christmas Day', dataY: 50 },
-        { quarter: 'Thanksgiving Day', dataY: 65 },
-        { quarter: 'Mother`s Day', dataY: 80 },
-        { quarter: 'Valentine`s Day', dataY: 100 },
-    ];
-    
-    
-    var dataSunflower = [
-        {
-            "country":"Ukraine",
-            "season":"Winter",
-            "holiday":"Christmas Day",
-            "color":"Red",
-            "var1": "100",
-            "var2": "45",
-            "var3": "80",
-            "var4": "20",
-        },
-        
-        {
-            "country":"Russia",
-            "season":"Spring",
-            "holiday":"Thanksgiving Day",
-            "color":"Yellow",
-            "var1": "80",
-            "var2": "30",
-            "var3": "65",
-            "var4": "45",
-        },
-        {
-            "country":"Argentina",
-            "season":"Summer",
-            "holiday":"Mother's Day",
-            "color":"Blue",
-            "var1": "70",
-            "var2": "10",
-            "var3": "55",
-            "var4": "30",
-        },
-        
-        {
-            "country":"China",
-            "season":"Fall",
-            "holiday":"Valentine's Day",
-            "color":"White",
-            "var1": "90",
-            "var2": "56",
-            "var3": "89",
-            "var4": "60",
-        },
-        
-        
-        
-    ];
-    
-    var dataTulip = [
-        {
-            "country":"Ukraine",
-            "season":"Winter",
-            "holiday":"Christmas Day",
-            "color":"Red",
-            "var1": "100",
-            "var2": "45",
-            "var3": "80",
-            "var4": "20",
-        },
-        
-        {
-            "country":"Russia",
-            "season":"Spring",
-            "holiday":"Thanksgiving Day",
-            "color":"Yellow",
-            "var1": "80",
-            "var2": "30",
-            "var3": "65",
-            "var4": "45",
-        },
-        {
-            "country":"Argentina",
-            "season":"Summer",
-            "holiday":"Mother's Day",
-            "color":"Blue",
-            "var1": "70",
-            "var2": "10",
-            "var3": "55",
-            "var4": "30",
-        },
-        
-        {
-            "country":"China",
-            "season":"Fall",
-            "holiday":"Valentine's Day",
-            "color":"White",
-            "var1": "90",
-            "var2": "56",
-            "var3": "89",
-            "var4": "60",
-        },
-        
-        
-        
-    ];
-    
-    var dataLily = [
-        {
-            "country":"EEUU",
-            "season":"Winter",
-            "holiday":"Christmas Day",
-            "color":"Red",
-            "var1": "100",
-            "var2": "45",
-            "var3": "80",
-            "var4": "20",
-        },
-        
-        {
-            "country":"Canada",
-            "season":"Spring",
-            "holiday":"Thanksgiving Day",
-            "color":"Yellow",
-            "var1": "30",
-            "var2": "50",
-            "var3": "70",
-            "var4": "85",
-        },
-        {
-            "country":"Argentina",
-            "season":"Summer",
-            "holiday":"Mother's Day",
-            "color":"Blue",
-            "var1": "70",
-            "var2": "10",
-            "var3": "55",
-            "var4": "30",
-        },
-        
-        {
-            "country":"England",
-            "season":"Fall",
-            "holiday":"Valentine's Day",
-            "color":"White",
-            "var1": "30",
-            "var2": "56",
-            "var3": "89",
-            "var4": "60",
-        },
-        
-        
-        
-    ];
-    
-  
-    
     
     const classes = useStyles();
     const menuClasses = menuStyles();
     const [srcMenu, setSrcMenu] = React.useState("/images/menu.png ");
     const [styleMenu, setStyleMenu] = React.useState(classes);
     const [open, setOpen] = React.useState(false);
-    const [ data, setData ] = React.useState(dataInitials);
+    
+    const value = React.useContext(DataContext);
     
     
-    const context = {
-        
-        data: data,
-        setData: setData,
-        
-    }
-    
-    console.log(data);
     const handleClick = () => {
         setOpen(prev => !prev);
         setSrcMenu("/images/menu.png");
@@ -312,6 +27,13 @@ function Discover(props){
         
         
     };
+    
+    
+    
+    
+    
+    
+    
     
     return(    
         
@@ -328,15 +50,29 @@ function Discover(props){
             
             
             <div>
-            <DataContext.Provider value={context}> 
+            
             <EditPanel 
-            setData={setData}
-            dataRoseCountry = {dataRoseCountry}
-            dataSunflowerCountry = {dataSunflowerCountry}
-            dataTulipCountry = {dataTulipCountry}
-            dataLilyCountry = {dataLilyCountry}
+            data={value.dataInitials}
+            setData={value.setData}
+            dataRoseCountry = {value.dataRoseCountry}
+            dataSunflowerCountry = {value.dataSunflowerCountry}
+            dataTulipCountry = {value.dataTulipCountry}
+            dataLilyCountry = {value.dataLilyCountry}
+            dataRoseColor= {value.dataRoseColor}
+            dataSunflowerColor= {value.dataSunflowerColor}
+            dataTulipColor= {value.dataTulipColor}
+            dataLilyColor= {value.dataLilyColor}
+            dataRoseSeason= {value.dataRoseSeason}
+            dataSunflowerSeason= {value.dataSunflowerSeason}
+            dataTulipSeason= {value.dataTulipSeason}
+            dataLilySeason= {value.dataLilySeason}
+            dataRoseHoliday= {value.dataRoseHoliday}
+            dataSunflowerHoliday= {value.dataSunflowerHoliday}
+            dataTulipHoliday= {value.dataTulipHoliday}
+            dataLilyHoliday= {value.dataLilyHoliday}
+            
             />
-            </DataContext.Provider>
+            
             </div>: null}           
             </div> 
             <div className ={styleMenu.contentRight}>
@@ -347,13 +83,14 @@ function Discover(props){
             
             <section className={classes.bodyContent}>
             <div className={classes.table}>
-
-            <VictoryChart height={560} width={700} animate={{ duration: 2000, easing: "bounce" }} domainPadding={100}>
-            <VictoryBar data={data} x="quarter" y="dataY"
-                     style={{ data: { fill: data => (data.y > 2 ? "#FBC530" : "#FBC530") } }} 
+            
+            <VictoryChart     colorScale={["tomato", "orange", "gold"]} theme={VictoryTheme.material} height={560} width={700} animate={{ duration: 2000, easing: "bounce" }} domainPadding={100}>
+            <VictoryLabel  className="myLabel" width={700} text={value.dataSelected} x={350} y={30} textAnchor="middle"    style={{ myLabel: {fontSize: 120 } }}/>
+            <VictoryBar     barRatio={0.8} data={value.data} x="quarter" y="dataY"
+            style={{ data: { fill: data => (data.y > 2 ? "#FBC530" : "#FBC530") } }} 
             />
             </VictoryChart>
-
+            
             
             </div>
             
@@ -403,6 +140,10 @@ function Discover(props){
             
         }));
         const useStyles = makeStyles(theme => ({
+            otherView:{
+                position: 'absolute',
+                color: 'black'
+            },
             app:{
                 display: 'flex',
                 flexDirection: 'row',
