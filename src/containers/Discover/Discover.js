@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles} from '@material-ui/core';
 import EditPanel from '../../components/EditPanel/EditPanel';
 import DataContext from '../../context/DataContext/DataContext';
+import { Link} from 'react-router-dom';
 import { VictoryBar, VictoryChart, VictoryTheme, VictoryLabel } from "victory";
 
 function Discover(props){
@@ -9,6 +10,8 @@ function Discover(props){
     const classes = useStyles();
     const menuClasses = menuStyles();
     const [srcMenu, setSrcMenu] = React.useState("/images/menu.png ");
+    const [widthMenu, setWidthMenu] = React.useState(50);
+    const [heightMenu, setHeightMenu] = React.useState(40);
     const [styleMenu, setStyleMenu] = React.useState(classes);
     const [open, setOpen] = React.useState(false);
     
@@ -18,10 +21,13 @@ function Discover(props){
     const handleClick = () => {
         setOpen(prev => !prev);
         setSrcMenu("/images/menu.png");
+        
         setStyleMenu(classes);
         if(!open){
             setStyleMenu(menuClasses);
-            setSrcMenu("/images/menuOpen.png");
+            setHeightMenu(30);
+            setWidthMenu(35);
+            setSrcMenu("/images/close.png");
         }
         
         
@@ -42,7 +48,7 @@ function Discover(props){
         <div className={styleMenu.wrapper}>
         
         <div  className= {styleMenu.containMenu}>
-        <img className= {classes.imgMenu} src={srcMenu} alt="menu" onClick={handleClick}/>
+        <img className= {classes.imgMenu} src={srcMenu} width={widthMenu}  height={heightMenu}alt="menu" onClick={handleClick}/>
         </div>
         
         
@@ -77,7 +83,7 @@ function Discover(props){
             </div> 
             <div className ={styleMenu.contentRight}>
             <div className ={classes.navPage}>
-            <h1 className= {classes.namePage}>FLOWER STORE</h1>           
+            <h1 className= {classes.namePage}><Link to={ `/`} className={classes.namePage}> FLOWER STORE</Link></h1>           
             
             </div>
             
@@ -108,7 +114,7 @@ function Discover(props){
         const menuStyles = makeStyles(theme => ({
             wrapper:{
                 backgroundColor: 'black',
-                width: 300,
+                width:400,  
                 height: '100vh',
                 transition: 'all 1s',
             },
@@ -156,6 +162,7 @@ function Discover(props){
                 justifyContent: 'flex-start',
                 flexDirection:'column',
                 alignSelf: 'flex-start',
+                width:400,
                 
                 
             },
@@ -174,8 +181,10 @@ function Discover(props){
             },
             
             namePage:{
-                marginTop: 30,
+           
                 transition: 'all 1s',
+                textDecoration:'none',
+                color:'black'
             },
             
             
@@ -187,8 +196,7 @@ function Discover(props){
             },
             
             imgMenu:{
-                width: 41,
-                height: 28,
+
                 marginLeft: 35,
                 cursor: 'pointer',
                 
@@ -203,7 +211,6 @@ function Discover(props){
                 justifyContent:'center',
                 flexWrap: 'wrap',
                 alignSelf: 'center',
-                transition: 'all 1s',
                 
             }, 
             bodyContent:{
@@ -213,7 +220,7 @@ function Discover(props){
                 justifyContent: 'center',
                 alignContent: 'center',
                 alignItems: 'center',
-                transition: 'all 1s',
+
             }, 
             
             

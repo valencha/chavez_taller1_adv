@@ -145,11 +145,17 @@ function App() {
     const [inputSelected, setInputSelected] = React.useState("");
     const [ data, setData ] = React.useState(dataInitials);
     const [ favourite, setFavourite ] = React.useState([]);
+    const [ imgAvatar, setImgAvatar ] = React.useState([]);
+    const [ percent, setPercent ] = React.useState([]);
 
     
     const context = {
         
         data: data,
+        imgAvatar: imgAvatar,
+        percent: percent,
+        setImgAvatar: setImgAvatar,
+        setPercent: setPercent,
         favourite: favourite,
         setFavourite: setFavourite,
         dataInitials: dataInitials,

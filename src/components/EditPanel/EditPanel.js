@@ -6,7 +6,7 @@ import DataContext from '../../context/DataContext/DataContext';
 import { Link} from 'react-router-dom';
 
 function EditPanel(props){
-
+    
     const classes = useStyles();
     const selectedRose = selectedRoseStyles();
     const selectedLily = selectedLilyStyles();
@@ -14,17 +14,17 @@ function EditPanel(props){
     const selectedTulip = selectedTulipStyles();
     const [styleSelected, setStyleSelected] = React.useState(classes);
     const value = React.useContext(DataContext);
-
-
+    
+    
     function handleClickRose(){
-     //   value.setData(props.dataRoseCountry);
+        //   value.setData(props.dataRoseCountry);
         value.setData(props.data);
         value.setDataSelected('Rose');
         setStyleSelected(selectedRose);
         value.setInputSelected('');
         console.log(value.data);
         
-
+        
     }
     
     function handleClickSunflower(){
@@ -35,43 +35,44 @@ function EditPanel(props){
     }
     
     function handleClickTulip(){
-      //  value.setData(props.dataTulipCountry);
-      value.setData(props.data);
-      setStyleSelected(selectedTulip);
+        //  value.setData(props.dataTulipCountry);
+        value.setData(props.data);
+        setStyleSelected(selectedTulip);
         value.setDataSelected('Tulip');
     }
     
     function handleClickLily(){
-       // value.setData(props.dataLilyCountry);
-       value.setData(props.data);
+        // value.setData(props.dataLilyCountry);
+        value.setData(props.data);
         value.setDataSelected('Lily');
         setStyleSelected(selectedLily);
-
+        
     }
     function handleClick(){
-      
-
-       if( value.dataSelected === 'Rose'){
-        value.favourite.push(value.dataSelected +''+ 100+'%');
-       }
-
-       if( value.dataSelected === 'Sunflower'){
-        value.favourite.push(value.dataSelected +''+ 40+'%');
-       }
-       if( value.dataSelected === 'Tulip'){
-        value.favourite.push(value.dataSelected +''+ 60+'%');
-       }
-       if( value.dataSelected === 'Lily'){
-        value.favourite.push(value.dataSelected +''+ 75+'%');
-       }
-       
- 
+        
+        
+        if( value.dataSelected === 'Rose'){
+            value.favourite.push({ flower: value.dataSelected, percent: 100+'%' , imgFlower:'/images/rose.png'});
+        }
+        
+        if( value.dataSelected === 'Sunflower'){
+            value.favourite.push({ flower: value.dataSelected, percent: 40 +'%', imgFlower:'/images/sunflower.png'});
+        }
+        if( value.dataSelected === 'Tulip'){
+            value.favourite.push({ flower: value.dataSelected, percent: 60 +'%', imgFlower:'/images/tulip.png'});
+            
+        }
+        if( value.dataSelected === 'Lily'){
+            value.favourite.push({ flower: value.dataSelected, percent: 75+'%' , imgFlower:'/images/lily.png'});
+        }
+        
+        
     }
-
+    
     
     return(
         
-      
+        
         <div className={classes.editPanel}>
         <h1 className={classes.panelTitle}>Look for flowers</h1>
         <h1 className={classes.panelSubt}>Type of flower</h1>
@@ -93,7 +94,7 @@ function EditPanel(props){
         <img className={styleSelected.imgFlower4} onClick= {handleClickLily}  src='/images/lily.png' alt="lily"/>
         <p className={classes.titleFlower} >Lily</p>
         </div>
-
+        
         </article>
         <h1 className={classes.panelSubt}>Availability by</h1>
         
@@ -108,28 +109,28 @@ function EditPanel(props){
         dataSunflowerCountry = {props.dataSunflowerCountry}
         dataTulipCountry = {props.dataTulipCountry}
         dataLilyCountry = {props.dataLilyCountry}
- 
+        
         />
         <h1 className={classes.panelSubt}>Sales by</h1>
         
         <div className={classes.panelRadio}> <RadioInput
-               dataRoseSeason= {props.dataRoseSeason}
-               dataSunflowerSeason= {props.dataSunflowerSeason}
-               dataTulipSeason= {props.dataTulipSeason}
-               dataLilySeason= {props.dataLilySeason}
-               dataRoseHoliday= {props.dataRoseHoliday}
-               dataSunflowerHoliday= {props.dataSunflowerHoliday}
-               dataTulipHoliday= {props.dataTulipHoliday}
-               dataLilyHoliday= {props.dataLilyHoliday}
+        dataRoseSeason= {props.dataRoseSeason}
+        dataSunflowerSeason= {props.dataSunflowerSeason}
+        dataTulipSeason= {props.dataTulipSeason}
+        dataLilySeason= {props.dataLilySeason}
+        dataRoseHoliday= {props.dataRoseHoliday}
+        dataSunflowerHoliday= {props.dataSunflowerHoliday}
+        dataTulipHoliday= {props.dataTulipHoliday}
+        dataLilyHoliday= {props.dataLilyHoliday}
         
         /> </div>
         
         <Button variant="outlined" className={classes.panelButton} onClick={handleClick} ><Link to={ `/favourite`} className={classes.linkDiscover}> Add to favorites</Link>
-           </Button>
+        </Button>
         
         
         </div> 
-
+        
         );
         
         
@@ -139,13 +140,14 @@ function EditPanel(props){
         
         
         editPanel:{
+            transition: 'all 1s',
             position: 'absolute',
             display:'flex',
             flexDirection:'column',
             order: 0,
             color: 'white',
             border: 'none',
-            width: 320,
+            width:400,
             right: 0,
             left: 0,
             flex: '1 1 auto',
@@ -180,7 +182,7 @@ function EditPanel(props){
             flexWrap: 'wrap',
             alignItems: 'flex-start',
             alignContent: 'flex-start',
-
+            
             
         },
         
@@ -197,14 +199,14 @@ function EditPanel(props){
             width: 54,
             height: 48,
         },
-
+        
         imgFlower2:{
             display:'flex',
             width: 54,
             height: 48,
         },
-
-
+        
+        
         imgFlower3:{
             display:'flex',
             width: 54,
@@ -226,18 +228,25 @@ function EditPanel(props){
             height: 46,
             alignSelf: 'center',
             marginTop: 20,
+
             
+        },
+        linkDiscover:{
+            textDecoration: 'none',
+            color: 'white',
+
+
         }
         
         
     }));
-
-
+    
+    
     const selectedRoseStyles = makeStyles(theme => ({
         
         imgFlower:{
             display:'flex',
-            border: '5px solid pink',
+            border: '5px solid #DB7093',
             width: 54,
             height: 48,
         },
@@ -246,21 +255,21 @@ function EditPanel(props){
             width: 54,
             height: 48,
         },
-
+        
         imgFlower3:{
             display:'flex',
             width: 54,
             height: 48,
         },
-
+        
         imgFlower4:{
             display:'flex',
             width: 54,
             height: 48,
         },
-
+        
     }));
-
+    
     const selectedSunflowerStyles = makeStyles(theme => ({
         imgFlower:{
             display:'flex',
@@ -270,7 +279,7 @@ function EditPanel(props){
         
         imgFlower2:{
             display:'flex',
-            border: '5px solid pink',
+            border: '5px solid #DB7093',
             width: 54,
             height: 48,
         },
@@ -284,9 +293,9 @@ function EditPanel(props){
             width: 54,
             height: 48,
         },
-
+        
     }));
-
+    
     const selectedTulipStyles = makeStyles(theme => ({
         imgFlower:{
             display:'flex',
@@ -301,7 +310,7 @@ function EditPanel(props){
         
         imgFlower3:{
             display:'flex',
-            border: '5px solid pink',
+            border: '5px solid #DB7093',
             width: 54,
             height: 48,
         },
@@ -310,10 +319,10 @@ function EditPanel(props){
             width: 54,
             height: 48,
         },
-
+        
     }));
-
-
+    
+    
     const selectedLilyStyles = makeStyles(theme => ({
         imgFlower:{
             display:'flex',
@@ -332,10 +341,10 @@ function EditPanel(props){
         },
         imgFlower4:{
             display:'flex',
-            border: '5px solid pink',
+            border: '5px solid #DB7093',
             width: 54,
             height: 48,
         },
-
+        
     }));
     export default EditPanel

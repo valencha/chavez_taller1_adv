@@ -37,6 +37,7 @@ function Home(props){
            // overflowY: 'hidden',
             backgroundImage: (props) => `url(${props.urlBanner})`,
             backgroundSize: 'cover',
+            transition: 'all 1s',
         },
         menu:{
             display:'flex',
