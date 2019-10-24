@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/chavez_taller1_adv/static/js/main.1ff2d318.chunk.js",
-    "main.js.map": "/chavez_taller1_adv/static/js/main.1ff2d318.chunk.js.map",
+    "main.js": "/chavez_taller1_adv/static/js/main.7e65129c.chunk.js",
+    "main.js.map": "/chavez_taller1_adv/static/js/main.7e65129c.chunk.js.map",
     "runtime-main.js": "/chavez_taller1_adv/static/js/runtime-main.add6f6f4.js",
     "runtime-main.js.map": "/chavez_taller1_adv/static/js/runtime-main.add6f6f4.js.map",
     "static/js/2.99d2fe0f.chunk.js": "/chavez_taller1_adv/static/js/2.99d2fe0f.chunk.js",
     "static/js/2.99d2fe0f.chunk.js.map": "/chavez_taller1_adv/static/js/2.99d2fe0f.chunk.js.map",
     "index.html": "/chavez_taller1_adv/index.html",
-    "precache-manifest.6be4cf9eeeeb2759fc48e6ea15defa57.js": "/chavez_taller1_adv/precache-manifest.6be4cf9eeeeb2759fc48e6ea15defa57.js",
+    "precache-manifest.babb265d39c9caa1bf3aac56c65c606e.js": "/chavez_taller1_adv/precache-manifest.babb265d39c9caa1bf3aac56c65c606e.js",
     "service-worker.js": "/chavez_taller1_adv/service-worker.js"
   },
   "entrypoints": [
     "static/js/runtime-main.add6f6f4.js",
     "static/js/2.99d2fe0f.chunk.js",
-    "static/js/main.1ff2d318.chunk.js"
+    "static/js/main.7e65129c.chunk.js"
   ]
 }
