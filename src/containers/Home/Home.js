@@ -7,21 +7,21 @@ function Home(props){
     const classes = useStyles({ urlBanner: 'images/bannerHome.png' });
     return (
         <section className={classes.container}>
-            <header className={classes.menu}> 
-             <div className= {classes.indicator}>
-                 <img className={classes.indicatorPage} src='images/indicatorPage.png' alt='banner'/>
-             </div>
-             <h1 className={classes.title}>Home</h1>
-             </header>
-             <div className={classes.containName}>
-               <h1 className={classes.namePage}>FLOWER<br></br>STORE
-               </h1> 
-
-                <button  className={classes.btnDiscover}>  <Link to={ `/discover`} className={classes.linkDiscover}>Discover</Link></button>
-
-
-           
-             </div>
+        <header className={classes.menu}> 
+        <div className= {classes.indicator}>
+        <img className={classes.indicatorPage} src='images/indicatorPage.png' alt='banner'/>
+        </div>
+        <h1 className={classes.title}>Home</h1>
+        </header>
+        <div className={classes.containName}>
+        <h1 className={classes.namePage}>FLOWER<br></br>STORE
+        </h1> 
+        
+        <Link to={ `/discover`} className={classes.linkDiscover}>   <button  className={classes.btnDiscover}>  Discover</button></Link>
+        
+        
+        
+        </div>
         </section>
         
         );
@@ -34,7 +34,7 @@ function Home(props){
             flexDirection:'column',
             width: 'auto',
             height: '100vh',
-           // overflowY: 'hidden',
+            // overflowY: 'hidden',
             backgroundImage: (props) => `url(${props.urlBanner})`,
             backgroundSize: 'cover',
             transition: 'all 1s'
@@ -48,7 +48,7 @@ function Home(props){
             alignItems:'flex-end',
             justifyItems:'flex-end',
             flexDirection:'row',
-           
+            
         },
         indicatorPage:{
             width: 30,
@@ -57,7 +57,7 @@ function Home(props){
         title:{
             color:'white',
             marginLeft:10,
-           
+            
         },
         containName:{
             width: 'auto',
@@ -69,8 +69,8 @@ function Home(props){
             justifySelf:'flex-start',
             alignContent: 'center',
             alignItems: 'center',
-        
-
+            
+            
         },
         namePage:{
             display:'column',
@@ -84,11 +84,11 @@ function Home(props){
             textAlign: 'center',
             fontSize: 170,
             whiteSpace: 'normal',
-  
-
+            
+            
         },
-     
-    
+        
+        
         btnDiscover:{
             display: 'column',
             order: 0,
@@ -103,13 +103,26 @@ function Home(props){
             width: 200,
             height: 50,
             color: 'white',
+            fontSize: 15,
             cursor: 'pointer',
+            transition: 'all 1s',
+            
+            '&:hover':{
+                backgroundColor: 'white',
+                color: 'black',
+                
+                
+            }
         },
-         linkDiscover:{
-             textDecoration: 'none',
-             color: 'white',
-             fontSize: 15,
-         }
+        linkDiscover:{
+            
+            textDecoration: 'none',
+            color: 'white',
+            fontSize: 15,
+            '&:hover':{
+                color: 'black'
+            }
+        }
         
     }));
     export default Home;

@@ -77,6 +77,7 @@ function Discover(props){
             dataTulipHoliday= {value.dataTulipHoliday}
             dataLilyHoliday= {value.dataLilyHoliday}
             
+            
             />
             
             </div>: null}           
@@ -91,9 +92,29 @@ function Discover(props){
             <div className={classes.table}>
             
             <VictoryChart     colorScale={["tomato", "orange", "gold"]} theme={VictoryTheme.material} height={560} width={700} animate={{ duration: 2000, easing: "bounce" }} domainPadding={100}>
-            <VictoryLabel  className="myLabel" width={700} text={value.dataSelected} x={350} y={30} textAnchor="middle"    style={{ myLabel: {fontSize: 120 } }}/>
-            <VictoryBar     barRatio={0.8} data={value.data} x="quarter" y="dataY"
-            style={{ data: { fill: data => (data.y > 2 ? "#FBC530" : "#FBC530") } }} 
+            <VictoryLabel    className="myLabel" width={700} text={value.dataSelected} x={350} y={30} textAnchor="middle"    style={{ myLabel: {fontSize: 120 } }}/>
+            <VictoryBar  barRatio={0.8} data={value.data} x="quarter" y="dataY"   
+          
+          style={{ data: { fill: data => (data.y === 100 ? "#FBC530": "#FBC530") } }} 
+            events={[{
+                target: "data",
+                eventHandlers: {
+                    onClick: () => {
+                        return [
+                            {
+                                target: "data",
+                                mutation: (props) => {
+                                    const fill = props.style && props.style.fill;
+                                    return fill === "black" ? null : { style: { fill: "black" } };
+                                }
+                            }
+                        ];
+                    }
+                }
+            }]}
+            
+            
+            
             />
             </VictoryChart>
             
@@ -181,7 +202,7 @@ function Discover(props){
             },
             
             namePage:{
-           
+                
                 transition: 'all 1s',
                 textDecoration:'none',
                 color:'black'
@@ -196,7 +217,7 @@ function Discover(props){
             },
             
             imgMenu:{
-
+                
                 marginLeft: 35,
                 cursor: 'pointer',
                 
@@ -220,7 +241,7 @@ function Discover(props){
                 justifyContent: 'center',
                 alignContent: 'center',
                 alignItems: 'center',
-
+                
             }, 
             
             

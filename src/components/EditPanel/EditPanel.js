@@ -14,7 +14,11 @@ function EditPanel(props){
     const selectedTulip = selectedTulipStyles();
     const [styleSelected, setStyleSelected] = React.useState(classes);
     const value = React.useContext(DataContext);
+    var temp = localStorage.getItem("value.favourite");
     
+    if(temp !== null){
+        value.favourite=JSON.parse(temp);
+    }
     
     function handleClickRose(){
         //   value.setData(props.dataRoseCountry);
@@ -53,9 +57,11 @@ function EditPanel(props){
         
         if( value.dataSelected === 'Rose'){
             value.favourite.push({ flower: value.dataSelected, percent: 100+'%' , imgFlower:'/images/rose.png'});
+   
         }
         
         if( value.dataSelected === 'Sunflower'){
+
             value.favourite.push({ flower: value.dataSelected, percent: 40 +'%', imgFlower:'/images/sunflower.png'});
         }
         if( value.dataSelected === 'Tulip'){
@@ -66,7 +72,8 @@ function EditPanel(props){
             value.favourite.push({ flower: value.dataSelected, percent: 75+'%' , imgFlower:'/images/lily.png'});
         }
         
-        
+        localStorage.setItem("value.favourite", JSON.stringify(value.favourite));
+       
     }
     
     
@@ -228,14 +235,14 @@ function EditPanel(props){
             height: 46,
             alignSelf: 'center',
             marginTop: 20,
-
+            
             
         },
         linkDiscover:{
             textDecoration: 'none',
             color: 'white',
-
-
+            
+            
         }
         
         
