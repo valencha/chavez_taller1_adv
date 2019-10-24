@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/chavez_taller1_adv/static/js/main.7e65129c.chunk.js",
-    "main.js.map": "/chavez_taller1_adv/static/js/main.7e65129c.chunk.js.map",
+    "main.js": "/chavez_taller1_adv/static/js/main.5421ccc6.chunk.js",
+    "main.js.map": "/chavez_taller1_adv/static/js/main.5421ccc6.chunk.js.map",
     "runtime-main.js": "/chavez_taller1_adv/static/js/runtime-main.add6f6f4.js",
     "runtime-main.js.map": "/chavez_taller1_adv/static/js/runtime-main.add6f6f4.js.map",
     "static/js/2.99d2fe0f.chunk.js": "/chavez_taller1_adv/static/js/2.99d2fe0f.chunk.js",
     "static/js/2.99d2fe0f.chunk.js.map": "/chavez_taller1_adv/static/js/2.99d2fe0f.chunk.js.map",
     "index.html": "/chavez_taller1_adv/index.html",
-    "precache-manifest.babb265d39c9caa1bf3aac56c65c606e.js": "/chavez_taller1_adv/precache-manifest.babb265d39c9caa1bf3aac56c65c606e.js",
+    "precache-manifest.29cffff240b20f2cb81cab96ff2c8b8b.js": "/chavez_taller1_adv/precache-manifest.29cffff240b20f2cb81cab96ff2c8b8b.js",
     "service-worker.js": "/chavez_taller1_adv/service-worker.js"
   },
   "entrypoints": [
     "static/js/runtime-main.add6f6f4.js",
     "static/js/2.99d2fe0f.chunk.js",
-    "static/js/main.7e65129c.chunk.js"
+    "static/js/main.5421ccc6.chunk.js"
   ]
 }
