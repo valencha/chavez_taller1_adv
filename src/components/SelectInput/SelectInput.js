@@ -136,10 +136,10 @@ export default function CustomizedSelects(props) {
         onClick={handleClick}
         input={<BootstrapInput name="age" id="age-customized-native-simple" />}
         >
-        <option value=''>Choose a category</option>
+        <option  style={{ fontFamily: 'Montserrat' , fontWeight: 100}}value=''>Choose a category</option>
         
-        <option value='country'>Country</option>
-        <option  value='color'>Color</option>
+        <option style={{ fontFamily: 'Montserrat' , fontWeight: 100}} value='country'>Country</option>
+        <option style={{ fontFamily: 'Montserrat' , fontWeight: 100}} value='color'>Color</option>
         </NativeSelect>
         </FormControl>
         </form>

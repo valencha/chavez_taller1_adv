@@ -18,7 +18,7 @@ function Viewdata(){
  
       
         <div className ={classes.navPage}>
-        <h1 className= {classes.nameStore}><Link to={ `/`} className={classes.nameStore}> Flower Store <img  className= {classes.nextHome} width="20" src="/images/next.png" alt="next"/> </Link></h1>   
+        <h1 className= {classes.nameStore}><Link to={ `/`} className={classes.nameStoreLink}> FLOWER STORE <img  className= {classes.nextHome} width="20" src="./images/next.png" alt="next"/> </Link></h1>   
 
         
         
@@ -92,6 +92,7 @@ function Viewdata(){
                 transition: 'all 1s',
                 fontSize: 20,
                 color: 'black',
+                fontFamily:'Oswald',
              
             },
             nameStore:{
@@ -103,6 +104,18 @@ function Viewdata(){
                 fontSize: 30,
                 width: 'auto',
                 color: 'white',
+                fontFamily:'Oswald',
+            },
+            nameStoreLink:{
+                display:'flex',
+                alignSelf: 'flex-end',
+                marginRight: 50,
+                transition: 'all 1s',
+                textDecoration: 'none',
+                fontSize: 30,
+                width: 'auto',
+                color: 'white',
+                fontFamily:'Oswald',
             },
             containerList:{
                 display: 'flex',
@@ -118,6 +131,7 @@ function Viewdata(){
                 listStyleType: 'none',
                 padding: 100,
                 fontSize: 20,
+                fontFamily:'Raleway',
             }        
             
             

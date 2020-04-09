@@ -16,6 +16,7 @@ function Home(props){
         <div className={classes.containName}>
         <h1 className={classes.namePage}>FLOWER<br></br>STORE
         </h1> 
+        <p className={classes.desPage}>Discover the statistics so you can make the purchase of your flowers in a good season</p>
         
         <Link to={ `/discover`} className={classes.linkDiscover}>   <button  className={classes.btnDiscover}>  Discover</button></Link>
         
@@ -27,6 +28,11 @@ function Home(props){
         );
     }
     const useStyles = makeStyles(theme => ({
+
+        desPage:{
+            color: 'white',
+            fontFamily:'Raleway',
+        },
         
         container:{
             display:'row',
@@ -76,7 +82,7 @@ function Home(props){
             display:'column',
             color:'white',
             height: 200,
-            lineHeight: 0.8,
+            lineHeight: 0.9,
             order: 0,
             flexWrap: 'wrap',
             flex: '0 1 auto',
@@ -84,7 +90,7 @@ function Home(props){
             textAlign: 'center',
             fontSize: 170,
             whiteSpace: 'normal',
-            
+            fontFamily:'Oswald',
             
         },
         
@@ -92,12 +98,14 @@ function Home(props){
         btnDiscover:{
             display: 'column',
             order: 0,
+            marginTop: 20,
             flex: '0 1 auto',
             textAlign: 'center',
             alignSelf: 'center',
             justifySelf: 'flex-start',
             backgroundColor: 'transparent',
             borderColor: 'white',
+            fontFamily:'Raleway',
             borderRadius: 20,
             alignItems: 'center',
             width: 200,
@@ -118,6 +126,7 @@ function Home(props){
             
             textDecoration: 'none',
             color: 'white',
+            fontFamily:'Raleway',
             fontSize: 15,
             '&:hover':{
                 color: 'black'

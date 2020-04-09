@@ -56,20 +56,20 @@ function EditPanel(props){
         
         
         if( value.dataSelected === 'Rose'){
-            value.favourite.push({ flower: value.dataSelected, percent: 100+'%' , imgFlower:'/images/rose.png'});
+            value.favourite.push({ flower: value.dataSelected, percent: 100+'%' , imgFlower:'./images/rose.png'});
    
         }
         
         if( value.dataSelected === 'Sunflower'){
 
-            value.favourite.push({ flower: value.dataSelected, percent: 40 +'%', imgFlower:'/images/sunflower.png'});
+            value.favourite.push({ flower: value.dataSelected, percent: 40 +'%', imgFlower:'./images/sunflower.png'});
         }
         if( value.dataSelected === 'Tulip'){
-            value.favourite.push({ flower: value.dataSelected, percent: 60 +'%', imgFlower:'/images/tulip.png'});
+            value.favourite.push({ flower: value.dataSelected, percent: 60 +'%', imgFlower:'./images/tulip.png'});
             
         }
         if( value.dataSelected === 'Lily'){
-            value.favourite.push({ flower: value.dataSelected, percent: 75+'%' , imgFlower:'/images/lily.png'});
+            value.favourite.push({ flower: value.dataSelected, percent: 75+'%' , imgFlower:'./images/lily.png'});
         }
         
         localStorage.setItem("value.favourite", JSON.stringify(value.favourite));
@@ -86,19 +86,19 @@ function EditPanel(props){
         
         <article className={classes.panelImages}>            
         <div className={classes.panelImg} onClick= {handleClickRose}>
-        <img className={styleSelected.imgFlower}  src='/images/rose.png' alt='rose'/>
+        <img className={styleSelected.imgFlower}  src='./images/rose.png' alt='rose'/>
         <p className={classes.titleFlower} >Rose</p>
         </div>
         <div className={classes.panelImg}>
-        <img className={styleSelected.imgFlower2} onClick= {handleClickSunflower} src='/images/sunflower.png' alt="sunflower"/>
+        <img className={styleSelected.imgFlower2} onClick= {handleClickSunflower} src='./images/sunflower.png' alt="sunflower"/>
         <p className={classes.titleFlower} >Sunflower</p>
         </div>
         <div className={classes.panelImg}>
-        <img className={styleSelected.imgFlower3} onClick= {handleClickTulip}  src='/images/tulip.png' alt="tulip"/>
+        <img className={styleSelected.imgFlower3} onClick= {handleClickTulip}  src='./images/tulip.png' alt="tulip"/>
         <p className={classes.titleFlower} >Tulip</p>
         </div>
         <div className={classes.panelImg}>
-        <img className={styleSelected.imgFlower4} onClick= {handleClickLily}  src='/images/lily.png' alt="lily"/>
+        <img className={styleSelected.imgFlower4} onClick= {handleClickLily}  src='./images/lily.png' alt="lily"/>
         <p className={classes.titleFlower} >Lily</p>
         </div>
         
@@ -132,8 +132,8 @@ function EditPanel(props){
         
         /> </div>
         
-        <Button variant="outlined" className={classes.panelButton} onClick={handleClick} ><Link to={ `/favourite`} className={classes.linkDiscover}> Add to favorites</Link>
-        </Button>
+        <Link to={ `/favourite`} className={classes.linkDiscover}> <Button variant="outlined" className={classes.panelButton} onClick={handleClick} > Add to favorites
+        </Button></Link>
         
         
         </div> 
@@ -164,10 +164,15 @@ function EditPanel(props){
         },
         panelTitle:{
             textAlign:'center',
+            fontFamily:'Montserrat',
         },
         
         panelSubt:{
             marginLeft:10,
+            fontFamily:'Montserrat',
+            fontWeight: '100',
+            fontSize: 18,
+            
         },
         panelSelect:{
             marginLeft:10,
@@ -226,6 +231,7 @@ function EditPanel(props){
         },
         titleFlower:{
             textAlign: 'center',
+            fontFamily:'Montserrat',
         },
         panelButton:{
             color: 'white',
@@ -235,12 +241,25 @@ function EditPanel(props){
             height: 46,
             alignSelf: 'center',
             marginTop: 20,
+            transition: 'all 1s',
+            fontFamily:'Raleway',
+         
+            '&:hover':{
+                backgroundColor: 'white',
+                color: 'black',
+                
+                
+            }
             
             
         },
         linkDiscover:{
+            alignSelf:'center',
+            fontFamily:'Raleway',
             textDecoration: 'none',
             color: 'white',
+            
+           
             
             
         }

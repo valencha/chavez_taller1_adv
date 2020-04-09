@@ -2,7 +2,7 @@ import React from 'react';
 import Home from '../Home/Home';
 import {CssBaseline } from '@material-ui/core';
 import DataContext from '../../context/DataContext/DataContext';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import Discover from '../Discover/Discover';
 import Viewdata from '../Viewdata/Viewdata';
 
@@ -10,10 +10,10 @@ function App() {
     
     var dataInitials = [
         
-        { quarter: 'Rose', dataY: 100 },
-        { quarter: 'Sunflower', dataY: 40 },
-        { quarter: 'Tulip', dataY: 60 },
-        { quarter: 'Lily', dataY: 75 },
+        { quarter: 'Rose', dataY: 100, fill: 'red' },
+        { quarter: 'Sunflower', dataY: 40, fill: 'blue'},
+        { quarter: 'Tulip', dataY: 60 ,fill:  'red' },
+        { quarter: 'Lily', dataY: 75, fill: 'blue'},
         
     ];
     var dataRoseCountry = [
@@ -186,7 +186,7 @@ function App() {
     
     return (
         
-        <Router> 
+        <Router basename={window.location.pathname}> 
         <div>
         <DataContext.Provider value={context}>    
         <Route path="/" exact component ={Home}/>

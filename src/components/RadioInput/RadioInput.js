@@ -14,9 +14,13 @@ const PinkRadio = withStyles({
       color: grey[50],
       
     },
+    
+  
+ 
   },
   checked: {},
 })(props => <Radio color="default" {...props} />);
+
 
 
 export default function FormControlLabelPosition(props) {
@@ -93,7 +97,7 @@ export default function FormControlLabelPosition(props) {
     <FormControlLabel
     value="season"
     control={<PinkRadio color='default' />}
-    label="Season"
+    label={<span style={{ fontFamily: 'Montserrat' , fontWeight: 100}}>Season</span>}
     checked={checkedRadio1}
     labelPlacement="end"
     
@@ -104,7 +108,7 @@ export default function FormControlLabelPosition(props) {
     checked={checkedRadio2}
     control={<PinkRadio color='primary' 
     />}
-    label="Holidays"
+    label={<span style={{ fontFamily: 'Montserrat' , fontWeight: 100}}>Holidays</span>}
     labelPlacement="end"
     />
     </RadioGroup>
